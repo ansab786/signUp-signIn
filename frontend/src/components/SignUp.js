@@ -41,8 +41,8 @@ function SignUp() {
       console.log(data);
       // <Navigate to="/" />;
 
-      localStorage.setItem("userInfo", JSON.stringify(data));
-      navigate("/");
+      localStorage.setItem("token", JSON.stringify(data));
+      navigate("/home");
     } catch (error) {
       console.log(error.message);
     }
@@ -106,7 +106,7 @@ function SignUp() {
         </Form>
         <Row className="py-3">
           <Col>
-            Have an Account ? <Link to="/signin">Login</Link>
+            Have an Account ? <Link to="/">Login</Link>
           </Col>
         </Row>
       </div>

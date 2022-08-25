@@ -32,8 +32,8 @@ const LoginScreen = () => {
         config
       );
 
-      localStorage.setItem("userInfo", JSON.stringify(data));
-      navigate("/");
+      localStorage.setItem("token", JSON.stringify(data));
+      navigate("/home");
     } catch (error) {
       console.log(error.message);
     }

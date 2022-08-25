@@ -24,7 +24,8 @@ const registerUser = async (req, res) => {
 
   if (user) {
     res.status(201).json({
-      message: "Successfully Resgitered!!!",
+      name: user.name,
+      email: user.email,
       token: generateToken(user._id),
     });
 
@@ -45,7 +46,8 @@ const authUser = async (req, res) => {
 
   if (user && (await user.matchPassword(password))) {
     res.json({
-      message: "Successfully Logged In!!!",
+      name: user.name,
+      email: user.email,
       token: generateToken(user._id),
     });
     console.log(`${user.name} Signed In Successfully!!`.cyan.bold.underline);
